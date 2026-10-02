@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>infaCore – YouTube channel</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;800&family=IBM+Plex+Sans:wght@400;500&display=swap">
+<style>
+:root{--bg:#F1F4F7;--ink:#10202E;--mute:#52606D;--line:#CBD5DF;--blue:#2F5BFF;--red:#E62117;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0F1A26;--ink:#EAF0F6;--mute:#9AA9B8;--line:#273747;--blue:#7C9BFF}}
+:root[data-theme="dark"]{--bg:#0F1A26;--ink:#EAF0F6;--mute:#9AA9B8;--line:#273747;--blue:#7C9BFF}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.05rem/1.6 "IBM Plex Sans",system-ui,sans-serif}
+.wrap{max-width:960px;margin:0 auto;padding:0 1.25rem}
+.hero{position:relative;overflow:hidden;padding:5rem 0 4rem}
+.rings{position:absolute;right:-120px;top:-60px;width:520px;max-width:100%;opacity:.9;z-index:0}
+.rings circle{fill:none;stroke:var(--blue);stroke-width:1.5}
+.hero .wrap{position:relative;z-index:1}
+h1{font:800 clamp(3.5rem,13vw,8rem)/.95 "Bricolage Grotesque",system-ui,sans-serif;letter-spacing:-.04em;margin:0 0 1.25rem}
+h1 span{font-weight:500}
+.lead{max-width:34ch;font-size:1.25rem;color:var(--mute);margin:0 0 2rem}
+.btns{display:flex;flex-wrap:wrap;gap:.75rem}
+.btn{display:inline-flex;align-items:center;gap:.6rem;padding:.9rem 1.4rem;border-radius:999px;font:500 1rem "IBM Plex Sans",sans-serif;text-decoration:none;border:1.5px solid var(--ink);color:var(--ink)}
+.btn.sub{background:var(--red);border-color:var(--red);color:#fff;font-weight:500;font-size:1.1rem}
+.btn:hover{filter:brightness(1.1)}
+.btn:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.btn svg{width:22px;height:22px;fill:currentColor}
+.find{border-top:1px solid var(--line);padding:3rem 0 4rem}
+h2{font:800 1.8rem/1.2 "Bricolage Grotesque",sans-serif;margin:0 0 1rem;letter-spacing:-.02em}
+.find ol{margin:0;padding-left:1.25rem;max-width:52ch;color:var(--mute)}
+.find li{margin-bottom:.5rem}
+.find b{color:var(--ink);font-weight:500}
+footer{border-top:1px solid var(--line);padding:1.5rem 0;color:var(--mute);font-size:.9rem}
+</style>
+</head>
+<body>
+<header class="hero">
+  <svg class="rings" viewBox="0 0 400 400" aria-hidden="true"><circle cx="200" cy="200" r="190"/><circle cx="200" cy="200" r="140"/><circle cx="200" cy="200" r="90"/><circle cx="200" cy="200" r="40" style="fill:var(--blue)"/></svg>
+  <div class="wrap">
+    <h1>infa<span>Core</span></h1>
+    <p class="lead">Videos from the infaCore YouTube channel. Subscribe to get every new upload.</p>
+    <div class="btns">
+      <a class="btn sub" id="subscribe" href="https://www.youtube.com/@infaCore?sub_confirmation=1" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.500 0-9.400.5A3 3 0 0 0 .5 6.200C0 8.100 0 12 0 12s0 3.900.5 5.800a3 3 0 0 0 2.100 2.100c1.900.5 9.400.5 9.400.5s7.500 0 9.400-.5a3 3 0 0 0 2.100-2.100c.5-1.900.5-5.800.5-5.800s0-3.900-.5-5.800ZM9.600 15.600V8.400l6.200 3.600-6.200 3.600Z"/></svg>
+        Subscribe on YouTube
+      </a>
+      <a class="btn" id="visit" href="https://www.youtube.com/@infaCore" target="_blank" rel="noopener">Open channel</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap find" id="find">
+  <h2>Can't find the channel?</h2>
+  <ol>
+    <li>Tap <b>Subscribe on YouTube</b>. It opens the infaCore channel and asks you to confirm.</li>
+    <li>Or <a href="https://www.youtube.com/results?search_query=infaCore&amp;sp=EgIQAg%253D%253D" target="_blank" rel="noopener" style="color:var(--blue)">search YouTube for infaCore</a> and pick the channel result.</li>
+    <li>Tap the bell after subscribing to get notified about new videos.</li>
+  </ol>
+</main>
+
+<footer><div class="wrap">© <span id="yr"></span> infaCore</div></footer>
+
+<script>
+// If you know your channel ID (starts with UC...), paste it here. It is the most exact link.
+var CHANNEL_ID = "";
+if (CHANNEL_ID) {
+  var base = "https://www.youtube.com/channel/" + CHANNEL_ID;
+  document.getElementById("subscribe").href = base + "?sub_confirmation=1";
+  document.getElementById("visit").href = base;
+}
+document.getElementById("yr").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
